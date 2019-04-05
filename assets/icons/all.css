@@ -1,0 +1,956 @@
+/*
+PLEASE SEE ICONS/FREEBIE-LICENSE.txt AS THE ICONS ARE FROM http://www.dreamstale.com AND ARE SUBJECT TO A DIFFERENT LICENSE
+
+Copyright 2019 github.com/thekodester and thekodester.ca
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+.icn-dreamstale {
+  vertical-align: middle;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.icn-dreamstale-add::before {
+  background-image: url('add.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-amazon::before {
+  background-image: url('amazon.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-android::before {
+  background-image: url('android.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-aol::before {
+  background-image: url('aol.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-apple::before {
+  background-image: url('apple.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-appstore::before {
+  background-image: url('appstore.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-ask::before {
+  background-image: url('ask.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-badoo::before {
+  background-image: url('badoo.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-bebo::before {
+  background-image: url('bebo.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-behance::before {
+  background-image: url('behance.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-bing::before {
+  background-image: url('bing.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-bitly::before {
+  background-image: url('bitly.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-blogger::before {
+  background-image: url('blogger.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-chrome::before {
+  background-image: url('chrome.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-delicious::before {
+  background-image: url('delicious.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-deviantart::before {
+  background-image: url('deviantart.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-digg::before {
+  background-image: url('digg.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-diigo::before {
+  background-image: url('diigo.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-dribbble::before {
+  background-image: url('dribble.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-drive::before {
+  background-image: url('drive.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-dropbox::before {
+  background-image: url('dropbox.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-drupal::before {
+  background-image: url('drupal.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-envato::before {
+  background-image: url('envato.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-etsy::before {
+  background-image: url('etsy.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-evernote::before {
+  background-image: url('evernote.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-facebook::before {
+  background-image: url('facebook.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-fav::before {
+  background-image: url('fav.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-feed::before {
+  background-image: url('feed.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-feedburner::before {
+  background-image: url('feedburner.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-fiverr::before {
+  background-image: url('fiverr.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-flickr::before {
+  background-image: url('flicker.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-formspring::before {
+  background-image: url('formspring.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-forrst::before {
+  background-image: url('forrst.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-friendfeed::before {
+  background-image: url('friendfeed.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-github::before {
+  background-image: url('github.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-google::before {
+  background-image: url('google.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-google-al::before {
+  background-image: url('google-alt.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-google-plus::before {
+  background-image: url('google-plus.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-hi5::before {
+  background-image: url('hi5.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-html5::before {
+  background-image: url('html5.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-icq::before {
+  background-image: url('icq.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-imdb::before {
+  background-image: url('imdb.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-instagram::before {
+  background-image: url('instagram.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-lastfm::before {
+  background-image: url('lastfm.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-link::before {
+  background-image: url('link.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-linkedin::before {
+  background-image: url('linkedin.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-livejournal::before {
+  background-image: url('livejournal.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-email::before {
+  background-image: url('email.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-metacafe::before {
+  background-image: url('metacafe.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-msn::before {
+  background-image: url('msn.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-myspace::before {
+  background-image: url('myspace.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-myspace-alt::before {
+  background-image: url('myspace-alt.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-newsvine::before {
+  background-image: url('newsvine.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-stackoverflow::before {
+  background-image: url('stackoverflow.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-paypal::before {
+  background-image: url('paypal.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-photobucket::before {
+  background-image: url('photobucket.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-picasa::before {
+  background-image: url('picasa.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-pinterest::before {
+  background-image: url('pinterest.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-pocket::before {
+  background-image: url('pocket.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-print::before {
+  background-image: url('print.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-qrcode::before {
+  background-image: url('qrcode.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-quora::before {
+  background-image: url('quora.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-reddit::before {
+  background-image: url('reddit.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-share::before {
+  background-image: url('share.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-skype::before {
+  background-image: url('skype.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-snapchat::before {
+  background-image: url('snapshat.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-soundcloud::before {
+  background-image: url('soundcloud.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-squidoo::before {
+  background-image: url('squidoo.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-steam::before {
+  background-image: url('steam.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-stumbleupon::before {
+  background-image: url('stumbleupon.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-techcrunch::before {
+  background-image: url('techcrunch.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-technorati::before {
+  background-image: url('technortai.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-tripadvisor::before {
+  background-image: url('tripadvisor.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-tumblr::before {
+  background-image: url('tumblr.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-twitter::before {
+  background-image: url('twitter.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-twitter-alt::before {
+  background-image: url('twitter-alt.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-viber::before {
+  background-image: url('viber.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-vimeo::before {
+  background-image: url('vimeo.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-whatsapp::before {
+  background-image: url('whatsapp.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-wikipedia::before {
+  background-image: url('wikipedia.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-windows::before {
+  background-image: url('windows.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-windows-alt::before {
+  background-image: url('windows-alt.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-windows-store::before {
+  background-image: url('windows-store.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-wordpress::before {
+  background-image: url('wordpress.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-xbox::before {
+  background-image: url('xbox.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-xing::before {
+  background-image: url('xing.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-yahoo::before {
+  background-image: url('yahoo.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-yahoo-messenger::before {
+  background-image: url('yahoo-messenger.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-yelp::before {
+  background-image: url('yelp.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-youtube::before {
+  background-image: url('youtube.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-youtube-alt::before {
+  background-image: url('youtube-alt.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-zoosk::before {
+  background-image: url('zoosk.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-zootool::before {
+  background-image: url('zootool.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-zynga::before {
+  background-image: url('zynga.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}

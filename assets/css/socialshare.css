@@ -1,0 +1,168 @@
+/*
+PLEASE SEE ICONS/FREEBIE-LICENSE.txt AS THE ICONS ARE FROM http://www.dreamstale.com AND ARE SUBJECT TO A DIFFERENT LICENSE
+
+Copyright 2019 github.com/thekodester and thekodester.ca
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+/**
+ * @description Initial styles place main button in bottom left corner with share buttons appearing in a menu to the right (with no text/only icons).
+ */
+
+.social-share-sticky {
+  position: fixed;
+  padding: 0em;
+  bottom: 1%;
+  left: 1%;
+  z-index: 999;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.social-share-sticky .dropdown-toggle::after {
+  display: none;
+  content: '';
+}
+
+.social-share-sticky .dropdown-menu-multi {
+  margin-left: 0.5rem !important;
+  top: -75% !important;
+  left: 25% !important;
+  padding: 0.5rem;
+  width: 18em;
+}
+
+.social-share-sticky .dropdown-row > a.dropdown-item {
+  display: inline-block;
+  padding: 0.25em;
+  width: 20%;
+  color: #fff;
+  font-size: 0;
+}
+
+.social-share-sticky .dropdown-row p {
+  display: inline-block;
+  margin: 0rem .5rem;
+}
+
+#socialShareModal .dropdown-row {
+  display: inline-block;
+  overflow: hidden;
+  height: 155px;
+}
+
+#socialShareModal .dropdown-item {
+  display: inline-block;
+  padding: 0em;
+  width: 33%;
+}
+
+#socialShareModal .btn-group-vertical {
+  bottom: 5rem;
+}
+
+/**
+ * @description Alters how far the menu of share button is from the main button.
+ * @purpose Small devices (landscape phones, 576px and up)
+ */
+@media (min-width: 576px) {
+  .social-share-sticky .dropdown-menu-multi {
+    left: 0 !important;
+  }
+}
+
+/**
+ * @description Alters the location of the main button and menu of share buttons to the left middle (icons still appear to the right).
+ * @purpose Large devices (desktops, 992px and up)
+ */
+@media (min-width: 992px) {
+  .social-share-sticky {
+    position: fixed;
+    padding: 0em 0.5em;
+    top: 50%;
+    left: 0;
+    z-index: 999;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .social-share-sticky .dropdown-toggle {
+    white-space: pre;
+    line-height: normal;
+  }
+
+  .social-share-sticky .dropdown-menu-multi {
+    transform: translate3d(40px, 0px, 0px);
+    margin-left: 0.5rem !important;
+    top: 0 !important;
+    left: 0 !important;
+    padding: 0.5rem;
+    width: 24em;
+  }
+
+  .social-share-sticky .dropdown-row > a.dropdown-item {
+    display: inline-block;
+    padding: 0.25em;
+    width: 50%;
+    color: #000;
+    font-size: 16px;
+  }
+}
+
+/**
+ * @description Allows the share buttons to be view on hover (only large devices).
+ * @purpose Extra large devices (large desktops, 1200px and up)
+ */
+@media (min-width: 1200px) {
+  .social-share-sticky:hover .btn-outline-success,
+  .social-share-sticky .dropup:hover .btn-outline-success
+  .social-share-sticky .dropdown-toggle:hover + .btn-outline-success,
+  .social-share-sticky .dropdown-menu-multi:hover .btn-outline-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+  }
+
+  .social-share-sticky:hover .btn-outline-primary,
+  .social-share-sticky .dropup:hover .btn-outline-primary
+  .social-share-sticky .dropdown-toggle:hover + .btn-outline-primary,
+  .social-share-sticky .dropdown-menu-multi:hover .btn-outline-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+
+  .social-share-sticky:hover .btn-outline-info,
+  .social-share-sticky .dropup:hover .btn-outline-info
+  .social-share-sticky .dropdown-toggle:hover + .btn-outline-info,
+  .social-share-sticky .dropdown-menu-multi:hover .btn-outline-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: #fff;
+  }
+
+  .social-share-sticky:hover .btn-outline-danger,
+  .social-share-sticky .dropup:hover .btn-outline-danger
+  .social-share-sticky .dropdown-toggle:hover + .btn-outline-danger,
+  .social-share-sticky .dropdown-menu-multi:hover .btn-outline-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+  }
+
+  .social-share-sticky:hover .dropdown-menu-multi,
+  .social-share-sticky .dropup:hover .dropdown-menu-multi,
+  .social-share-sticky .dropdown-toggle:hover + .dropdown-menu-multi,
+  .social-share-sticky .dropdown-menu-multi:hover {
+    display: block;
+  }
+}
