@@ -21,8 +21,10 @@ Example:
 ```html
 <div class="social-share social-share-sticky" data-social-share="{'iconSrc': '/path/to/icons/', title': 'Page Title', image: '/path/to/image.jpg', 'description': 'Page Description'}">
   <div class="btn-group dropright">
-    <input class="btn btn-outline-danger dropdown-toggle text-uppercase" id="socialShareBtn" type="button" value="Share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <label class="sr-only" for="socialShareBtn">Share this page</label>
+    <button class="btn btn-outline-danger dropdown-toggle text-uppercase" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span id="socialShareBtnText" aria-hidden="true">Share</span>
+      <span class="sr-only">Share this page</span>
+    </button>
     <div class="dropdown-menu dropdown-menu-right dropdown-menu-multi"></div>
   </div>
 </div>
