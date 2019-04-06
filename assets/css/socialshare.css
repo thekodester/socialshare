@@ -95,7 +95,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     cursor: pointer;
   }
 
-  .social-share-sticky .dropdown-toggle {
+  .social-share-sticky .dropdown-toggle span {
     white-space: pre;
     line-height: normal;
   }
