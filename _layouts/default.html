@@ -49,8 +49,10 @@
 
       <div class="social-share social-share-sticky" data-social-share="{'iconSrc': '/socialshare/assets/icons/', 'title': '{{ page.title | default: site.title | default: site.github.repository_name }}', 'description': '{{ page.description | default: site.description | default: site.github.project_tagline }}'}">
         <div class="btn-group dropright">
-          <input class="btn btn-outline-danger dropdown-toggle text-uppercase" id="socialShareBtn" type="button" value="Share" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <label class="sr-only" for="socialShareBtn">Share this page</label>
+          <button class="btn btn-outline-danger dropdown-toggle text-uppercase" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span id="socialShareBtnText" aria-hidden="true">Share</span>
+            <span class="sr-only">Share this page</span>
+          </button>
           <div class="dropdown-menu dropdown-menu-right dropdown-menu-multi"></div>
         </div>
       </div>
