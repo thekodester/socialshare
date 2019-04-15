@@ -16,8 +16,8 @@ If you would like to share one of our resources you can share the link to the sp
 
 With standard license you can use the purchased item(s) in one single end product.
 
-Find more great resources and tutorials at Dreamstale.com
-Sincerely,
+Find more great resources and tutorials at Dreamstale.com<br/>
+Sincerely,<br/>
 The Dreamstale Team.
 
 ## Acknowledgments
