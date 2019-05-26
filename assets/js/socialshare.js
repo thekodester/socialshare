@@ -18,7 +18,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       },
       twitter: {
         name: "Twitter",
-        url: "http://twitter.com/home?status={title}%20{url}"
+        url: "https://twitter.com/intent/tweet?text={description}&url={url}"
       },
       email: {
         name: "Email",
