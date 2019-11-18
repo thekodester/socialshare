@@ -193,32 +193,34 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   /**
    * @description createMenuItem is used to generate the html dropdown menu items that contains the actual share button.
    */
-  function createMenuItem(brand, network, iconSrc, title, image, description, urlShare) {
-    let icon = "",
-      item = "",
-      name = network.name;
-      if (urlShare) {
-        var url = urlShare;
-      } else {
-        var url = network.url;
-      }
-    // CREATE THE ICON AS SPAN USING CSS BY DEFAULT, UNLESS ICONSRC IS SPECIFIED THEN USE IMG TAG
-    icon = "<span class='icn-dreamstale icn-dreamstale-" + brand + "' aria-hidden='hidden'></span><p>" + name + "</p>";
-    if (iconSrc) {
-      icon = "<img src='" + iconSrc + brand + ".svg' width='45' height='45' alt='" + name + " Icon'><p>" + name + "</p>";
-    }
+   function createMenuItem(brand, network, iconSrc, title, image, description, urlOffer) {
+     let icon = "",
+       item = "",
+       name = network.name,
+       url = network.url;
 
-    // ENCODE THE URL AND SET THE SHARE BUTTON WITH ICON
-    url = url.replace(/\{url\}/, encodeURIComponent(location.protocol + '//' + location.host + location.pathname))
-      .replace(/\{title\}/, encodeURIComponent(title))
-      .replace(/\{image\}/, encodeURIComponent(image))
-      .replace(/\{description\}/, encodeURIComponent(description))
-      .replace(/\'/g, '%27');
-    item = "<a class='dropdown-item' href='" + url + "' target='_blank' rel='noreferrer'>" + icon + "</a>";
+       if (urlOffer) {
+         var thisURL = urlOffer;
+       } else {
+         var thisURL = location.protocol + '//' + location.host + location.pathname;
+       }
+     // CREATE THE ICON AS SPAN USING CSS BY DEFAULT, UNLESS ICONSRC IS SPECIFIED THEN USE IMG TAG
+     icon = "<span class='icn-dreamstale icn-dreamstale-" + brand + "' aria-hidden='hidden'></span><p>" + name + "</p>";
+     if (iconSrc) {
+       icon = "<img src='" + iconSrc + brand + ".svg' width='45' height='45' alt='" + name + " Icon'><p>" + name + "</p>";
+     }
 
-    // RETURN MENU ITEM AS HTML STRING
-    return item;
-  }
+     // ENCODE THE URL AND SET THE SHARE BUTTON WITH ICON
+     url = url.replace(/\{url\}/, encodeURIComponent(thisURL))
+       .replace(/\{title\}/, encodeURIComponent(title))
+       .replace(/\{image\}/, encodeURIComponent(image))
+       .replace(/\{description\}/, encodeURIComponent(description))
+       .replace(/\'/g, '%27');
+     item = "<a class='dropdown-item' href='" + url + "' target='_blank' rel='noreferrer'>" + icon + "</a>";
+
+     // RETURN MENU ITEM AS HTML STRING
+     return item;
+   }
 
   /**
    * @description setSocialShareModal is used to generate the modal that displays hidden networks.
