@@ -11,118 +11,119 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 (function () {
+  var urlFinal;
   var socialNetworks = {
-    facebook: {
-      name: "Facebook",
-      url: "http://www.facebook.com/sharer.php?u={url}&amp;t={title}"
-    },
-    whatsapp: {
-      name: "Whatsapp",
-      url: "https://api.whatsapp.com/send?text={title}%0A{description}%0A{url}"
-    },
-    email: {
-      name: "Email",
-      url: "mailto:?to=&subject={title}&body={url}%0A{description}"
-    },
-    print: {
-      name: "Print",
-      url: "#socialSharePrint" // NETWORKS WITH A HASHTAG RUN A JAVASCRIPT CLICK EVENT
-    },
-    link: {
-       tinyurl: {
-         name: "TinyURL",
-         url: "https://tinyurl.com/create.php?url={url}"
-       },
-      copy: {
-        name: "Copy Link",
-        url: "#socialShareCopy",
-      }
-    },
-    // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
-    add: {
-      name: "More",
-      url: "#socialShareMore"
-    },
-    twitter: {
-      name: "Twitter",
-      url: "http://twitter.com/home?status={title}%20{url}"
-    },
-
-    bitly: {
-      name: "Bitly",
-      url: "https://bitly.com/"
-    },
-    blogger: {
-      name: "Blogger",
-      url: "http://www.blogger.com/blog_this.pyra?t=&amp;u={url}&amp;n={title}"
-    },
-    digg: {
-      name: "Digg",
-      url: "http://digg.com/submit?phase=2&amp;url={url}&amp;title={title}"
-    },
-    diigo: {
-      name: "Diigo",
-      url: "http://www.diigo.com/post?url={url}&amp;title={title}"
-    },
-    evernote: {
-      name: "Evernote",
-      url: "https://www.evernote.com/clip.action?url={url}&title={title}"
-    },
-    // YOU CAN GROUP ICONS FROM THE SAME BRAND SO THEY SHARE AN ICON
-    google: {
-      gmail: {
-        name: "Gmail",
-        url: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su={title}&body={url}%0A{description}"
+      facebook: {
+        name: "Facebook",
+        url: "http://www.facebook.com/sharer.php?u={url}&amp;t={title}"
       },
-      gbookmark: {
-        name: "Google Bookmark",
-        url: "http://www.google.com/bookmarks/mark?op=add&bkmk={url}&title={title}"
-      }
-    },
-    linkedin: {
-      name: "LinkedIn",
-      url: "http://www.linkedin.com/shareArticle?mini=true&amp;url={url}&amp;title={title}&amp;ro=false&amp;summary={description}&amp;source="
-    },
-    livejournal: {
-      name: "LiveJournal",
-      url: "https://www.livejournal.com/update.bml?subject={title}&event={description}%20{url}"
-    },
-    myspace: {
-      name: "MySpace",
-      url: "http://www.myspace.com/Modules/PostTo/Pages/?u={url}&amp;t={title}"
-    },
-    pinterest: {
-      name: "Pinterest",
-      url: "http://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={title}"
-    },
-    pocket: {
-      name: "Pocket",
-      url: "http://getpocket.com/save?url={url}&title={title}"
-    },
-    reddit: {
-      name: "Reddit",
-      url: "http://reddit.com/submit?url={url}&amp;title={title}"
-    },
-    tumblr: {
-      name: "Tumblr",
-      url: "http://www.tumblr.com/share/link?url={url}&amp;name={title}&amp;description={description}"
-    },
-    yahoo: {
-      name: "Yahoo Mail",
-      url: "http://compose.mail.yahoo.com/?to=&subject={title}&body={url}%0A{description}"
-    },
-    qrcode: {
-      name: "GoQR.me",
-      url: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={url}"
-    }
+      whatsapp: {
+        name: "Whatsapp",
+        url: "https://api.whatsapp.com/send?text={title}%0A{description}%0A{url}"
+      },
+      email: {
+        name: "Email",
+        url: "mailto:?to=&subject={title}&body={url}%0A{description}"
+      },
+      print: {
+        name: "Print",
+        url: "#socialSharePrint" // NETWORKS WITH A HASHTAG RUN A JAVASCRIPT CLICK EVENT
+      },
+      link: {
+        tinyurl: {
+          name: "TinyURL",
+          url: "https://tinyurl.com/create.php?url={url}"
+        },
+        copy: {
+          name: "Copy Link",
+          url: "#socialShareCopy",
+        }
+      },
+      // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
+      add: {
+        name: "More",
+        url: "#socialShareMore"
+      },
+      twitter: {
+        name: "Twitter",
+        url: "http://twitter.com/home?status={title}%20{url}"
+      },
 
-  },
+      bitly: {
+        name: "Bitly",
+        url: "https://bitly.com/"
+      },
+      blogger: {
+        name: "Blogger",
+        url: "http://www.blogger.com/blog_this.pyra?t=&amp;u={url}&amp;n={title}"
+      },
+      digg: {
+        name: "Digg",
+        url: "http://digg.com/submit?phase=2&amp;url={url}&amp;title={title}"
+      },
+      diigo: {
+        name: "Diigo",
+        url: "http://www.diigo.com/post?url={url}&amp;title={title}"
+      },
+      evernote: {
+        name: "Evernote",
+        url: "https://www.evernote.com/clip.action?url={url}&title={title}"
+      },
+      // YOU CAN GROUP ICONS FROM THE SAME BRAND SO THEY SHARE AN ICON
+      google: {
+        gmail: {
+          name: "Gmail",
+          url: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su={title}&body={url}%0A{description}"
+        },
+        gbookmark: {
+          name: "Google Bookmark",
+          url: "http://www.google.com/bookmarks/mark?op=add&bkmk={url}&title={title}"
+        }
+      },
+      linkedin: {
+        name: "LinkedIn",
+        url: "http://www.linkedin.com/shareArticle?mini=true&amp;url={url}&amp;title={title}&amp;ro=false&amp;summary={description}&amp;source="
+      },
+      livejournal: {
+        name: "LiveJournal",
+        url: "https://www.livejournal.com/update.bml?subject={title}&event={description}%20{url}"
+      },
+      myspace: {
+        name: "MySpace",
+        url: "http://www.myspace.com/Modules/PostTo/Pages/?u={url}&amp;t={title}"
+      },
+      pinterest: {
+        name: "Pinterest",
+        url: "http://www.pinterest.com/pin/create/button/?url={url}&amp;media={image}&amp;description={title}"
+      },
+      pocket: {
+        name: "Pocket",
+        url: "http://getpocket.com/save?url={url}&title={title}"
+      },
+      reddit: {
+        name: "Reddit",
+        url: "http://reddit.com/submit?url={url}&amp;title={title}"
+      },
+      tumblr: {
+        name: "Tumblr",
+        url: "http://www.tumblr.com/share/link?url={url}&amp;name={title}&amp;description={description}"
+      },
+      yahoo: {
+        name: "Yahoo Mail",
+        url: "http://compose.mail.yahoo.com/?to=&subject={title}&body={url}%0A{description}"
+      },
+      qrcode: {
+        name: "GoQR.me",
+        url: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={url}"
+      }
+
+    },
     totalNetworks = Object.keys(socialNetworks).length;
 
   /**
    * @description Initial function in generating the social share widget. This function auto excutes.
    */
-  (function () {
+  (function() {
     var socialShareWidget;
     var socialShareWidgets = document.getElementsByClassName('social-share');
 
@@ -137,7 +138,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         let dataStr = socialShareWidget.getAttribute("data-social-share"),
           jsonStr = stringifyJson(dataStr),
           jsonObj = parseJson(jsonStr),
-          printSrc = arrayKeyExists(jsonObj, "printSrc", "main_content"),
+          printSrc = arrayKeyExists(jsonObj, "printSrc", "html"),
           iconSrc = arrayKeyExists(jsonObj, "iconSrc", ""),
           title = arrayKeyExists(jsonObj, "title", document.title),
           image = arrayKeyExists(jsonObj, "image", ""),
@@ -146,7 +147,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
         socialShareMenu.innerHTML = menu; // INSERT THE DROPDOWN MENU
         setSocialShareModal(socialShareWidget); // SETS THE MORE BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WITH OTHER NETWORKS)
-        setPrint(socialShareWidget, printSrc); // SETS THE PRINT BUTTON/OPTION (PRINTS ONLY THE PROVIDE IDs CONTENT)
+        setPrint(socialShareWidget, ".lorem"); // SETS THE PRINT BUTTON/OPTION (printSrc should be a jquery valid selector,
+                                              // it will print the selector content or whole page,
+                                             // you can also set a CSS file inside the function, see it)
+        setCopy(socialShareWidget); // SETS THE COPY BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WHEN CLIPBOARD ACCESS IS NOT ALLOWED)
       }
     }
   })();
@@ -177,7 +181,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       // CHECK IF LIMIT REACHED (LIMITS WHAT IS INITIALLY SEE ABLE AND HIDES OTHERS FOR MODAL)
       if (total === limit) {
-        menu += "<div class='dropdown-row'><div class='title-social-media'>Compartilhe essa oferta!</div>" + items + "</div>";
+        menu += "<div class='dropdown-row'><div class='title-social-media'>Share!</div>" + items + "</div>";
         items = "";
       } else if (total === totalNetworks) {
         menu += "<div class='dropdown-row d-none' id='dropdownRowHidden'>" + items + "</div>";
@@ -193,41 +197,42 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   /**
    * @description createMenuItem is used to generate the html dropdown menu items that contains the actual share button.
    */
-   function createMenuItem(brand, network, iconSrc, title, image, description, urlOffer) {
-     let icon = "",
-       item = "",
-       name = network.name,
-       url = network.url;
+  function createMenuItem(brand, network, iconSrc, title, image, description, urlShare) {
+    let icon = "",
+      item = "",
+      name = network.name,
+      url = network.url;
 
-       if (urlOffer) {
-         var thisURL = urlOffer;
-       } else {
-         var thisURL = location.protocol + '//' + location.host + location.pathname;
-       }
-     // CREATE THE ICON AS SPAN USING CSS BY DEFAULT, UNLESS ICONSRC IS SPECIFIED THEN USE IMG TAG
-     icon = "<span class='icn-dreamstale icn-dreamstale-" + brand + "' aria-hidden='hidden'></span><p>" + name + "</p>";
-     if (iconSrc) {
-       icon = "<img src='" + iconSrc + brand + ".svg' width='45' height='45' alt='" + name + " Icon'><p>" + name + "</p>";
-     }
+    if (urlShare) {
+      var thisURL = urlShare;
+    } else {
+      var thisURL = location.protocol + '//' + location.host + location.pathname;
+    }
+    // CREATE THE ICON AS SPAN USING CSS BY DEFAULT, UNLESS ICONSRC IS SPECIFIED THEN USE IMG TAG
+    icon = "<span class='icn-dreamstale icn-dreamstale-" + brand + "' aria-hidden='hidden'></span><p>" + name + "</p>";
+    if (iconSrc) {
+      icon = "<img src='" + iconSrc + brand + ".svg' width='45' height='45' alt='" + name + " Icon'><p>" + name + "</p>";
+    }
 
-     // ENCODE THE URL AND SET THE SHARE BUTTON WITH ICON
-     url = url.replace(/\{url\}/, encodeURIComponent(thisURL))
-       .replace(/\{title\}/, encodeURIComponent(title))
-       .replace(/\{image\}/, encodeURIComponent(image))
-       .replace(/\{description\}/, encodeURIComponent(description))
-       .replace(/\'/g, '%27');
-     item = "<a class='dropdown-item' href='" + url + "' target='_blank' rel='noreferrer'>" + icon + "</a>";
+    // ENCODE THE URL AND SET THE SHARE BUTTON WITH ICON
+    url = url.replace(/\{url\}/, encodeURIComponent(thisURL))
+      .replace(/\{title\}/, encodeURIComponent(title))
+      .replace(/\{image\}/, encodeURIComponent(image))
+      .replace(/\{description\}/, encodeURIComponent(description))
+      .replace(/\'/g, '%27');
+    item = "<a class='dropdown-item' href='" + url + "' target='_blank' rel='noreferrer'>" + icon + "</a>";
+    urlFinal = thisURL;
 
-     // RETURN MENU ITEM AS HTML STRING
-     return item;
-   }
+    // RETURN MENU ITEM AS HTML STRING
+    return item;
+  }
 
   /**
    * @description setSocialShareModal is used to generate the modal that displays hidden networks.
    */
   function setSocialShareModal(element) {
     if (element.querySelector('[href="#socialShareMore"]') != null) {
-      element.querySelector('[href="#socialShareMore"]').addEventListener('click', function (e) {
+      element.querySelector('[href="#socialShareMore"]').addEventListener('click', function(e) {
         e.preventDefault();
 
         // REMOVE ANY EXISTING MODAL
@@ -253,66 +258,105 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           document.body.appendChild(div);
 
           $('#socialShareModal').modal('show');
-          setCopy(document.getElementById('socialShareModal'));
         }
       });
     }
   }
+
 
   /**
    * @description setPrint is used to generate a printable page.
    */
   function setPrint(element, printSrc) {
     if (element.querySelector('[href="#socialSharePrint"]') != null) {
-      element.querySelector('[href="#socialSharePrint"]').addEventListener('click', function (e) {
+      element.querySelector('[href="#socialSharePrint"]').addEventListener('click', function(e) {
         e.preventDefault();
+        var popup = open("", "Popup", "width=1025,height=900");
 
-        // FIND THE PAGES MAIN CONTENT
-        let main_content = document.getElementById(printSrc);
-        if (main_content) {
-          main_content = main_content.innerHTML;
-          main_content = main_content.replace(/\<img(.*)\>/g, '');
-          main_content += "<p>Printed from " + location.host + "</p>";
+        if (printSrc != "html") {
+            var printDiv = true;
+            popup.document.write('<html><head></head><body class="sharecontent print">');
+            var printHTML = $(printSrc)[0].innerHTML;
 
-          // PRINT ONLY THE MAIN CONTENT OF PAGE
-          let printWindow = window.open('', '_blank');
-          printWindow.document.write('<title>' + document.title + '</title>' + main_content);
-          printWindow.document.close();
-          printWindow.print();
-          printWindow.close();
+        } else {
+          var printDiv = false;
+          var printHTML = $("html")[0].innerHTML
         }
+
+        popup.document.write(printHTML);
+
+
+    /* I like to hide the share button on the print, I think that may be a lot of things unnecessary on printed page, */
+    /* you may set it bellow or on a separated stylesheet */
+        var elementClasses = "." + element.className.split(" ").join(".");
+        popup.document.head.insertAdjacentHTML('beforeend', '<style>' + elementClasses + ' .btn-group, ' + elementClasses + ' .dropdown-menu { display: none} </style>');
+
+        let bootstrapStylesheet = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+        popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="'+bootstrapStylesheet+'" type="text/css">');
+
+    /* You can set a stylesheet for the print popup, just uncomment bellow and set the path to the css file */
+        // let stylelist = window.location.protocol+"//"+window.location.host+"/style.css";
+        // popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="'+stylelist+'" type="text/css">');
+
+
+        if (printDiv) {
+          popup.document.write('</body></html>');
+        }
+
+        setTimeout(function() { /* just to be sure that file was loaded */
+      		popup.window.print();
+      		popup.window.close();
+      	}, 500);
+
       });
     }
   }
+
 
   /**
    * @description setCopy creates a mini form that allows the user to copy the pages link (must be used inside the modal).
    */
   function setCopy(element) {
     if (element.querySelector('[href="#socialShareCopy"]') != null) {
-      element.querySelector('[href="#socialShareCopy"]').addEventListener('click', function (e) {
+      element.querySelector('[href="#socialShareCopy"]').addEventListener('click', function(e) {
         e.preventDefault();
 
-        // FIND THE EXISTING MODAL
-        let ssmodal = document.getElementById('ssmodal');
-        if (ssmodal) {
-          // REPLASE MODAL BODY WITH COPY FORM
-          let form = "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
-          form += "<h1>Copy Link</h1>";
-          form += "<div class='form-group my-4'>";
-          form += "<label for='linkCopierInput' class='sr-only'>Link</label><input class='form-control w-100' id='linkCopierInput' name='link' value='" + (location.protocol + '//' + location.host + location.pathname) + "' readonly='readonly'/>";
-          form += "<button class='btn btn-lg btn-primary my-2' id='linkCopierButton' type='button'>Copy</button>";
-          form += "</div>";
-          ssmodal.querySelector('.modal-body').innerHTML = form;
+        /* show box only if cannot copy automatically */
+        modalCopy = document.createElement('div');
+        copyForm = "<div id='modal-copy-container' class='modal-copy-container'>";
+        copyForm += "<div class='modal modal-copy'>";
+        copyForm += "<button type='button' class='close' onclick='modalCopy.parentNode.removeChild(modalCopy)' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
+        copyForm += "<h1>Copiar link</h1>";
+        copyForm += "<div class='form-group my-4'>";
+        copyForm += "<label for='linkCopierInput' class='sr-only'>Link</label><input class='form-control w-100' id='linkCopierInput' name='link' value='" + (urlFinal) + "' readonly='readonly'/>";
+        copyForm += "<button class='btn btn-lg btn-primary my-2' id='linkCopierButton' type='button'>Copy</button>";
+        copyForm += "</div>";
+        copyForm += "</div>";
+        copyForm += "</div>";
+        modalCopy.innerHTML = copyForm;
+        document.body.appendChild(modalCopy);
 
-          // ALLOWS THE USER TO COPY BY EITHER CLICKING ON THE READONLY INPUT OR A COPY BUTTON
-          let copyInput = document.getElementById('linkCopierInput');
-          copyInput.addEventListener('click', function (e) {
-            copyText(copyInput);
+        copyInput = document.getElementById('linkCopierInput');
+        document.getElementById('modal-copy-container').classList.add("copying");
+        document.getElementById('modal-copy-container').classList.remove("show");
+        copySuccess = copyText(copyInput);
+        if (copySuccess) {
+          modalCopy.parentNode.removeChild(modalCopy);
+        } else {
+          copyInput.addEventListener('click', function(e) {
+            copySuccess = copyText(copyInput);
+            if (copySuccess) {
+              modalCopy.parentNode.removeChild(modalCopy);
+            }
           });
-          document.getElementById('linkCopierButton').addEventListener('click', function (e) {
-            copyText(copyInput);
+          document.getElementById('linkCopierButton').addEventListener('click', function(e) {
+            copySuccess = copyText(copyInput);
+            if (copySuccess) {
+              modalCopy.parentNode.removeChild(modalCopy);
+            }
           });
+          document.getElementById('modal-copy-container').classList.add("show");
+          document.getElementById('modal-copy-container').classList.remove("copying");
         }
       });
     }
@@ -322,16 +366,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
    * @description copyText used by setCopy selects the text in an element and copies it, informs the user with a popover.
    */
   function copyText(element) {
-    element.select();
     try {
+      element.focus();
+      element.select();
       document.execCommand('copy');
       $(element).popover({
         content: 'Copied!',
         placement: 'top'
       });
       $(element).popover('show');
-      setTimeout(function () { $(element).popover('hide'); }, 1500);
+      setTimeout(function() {
+        $(element).popover('hide');
+      }, 1500);
+      return true;
     } catch (ex) {
+      console.log(ex);
+      return false;
     }
   }
 
@@ -360,8 +410,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     if (str) {
       try {
         json = JSON.parse(str);
-      } catch (ex) {
-      }
+      } catch (ex) {}
     }
     return json;
   }

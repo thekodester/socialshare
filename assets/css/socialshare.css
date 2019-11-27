@@ -166,3 +166,50 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     display: block;
   }
 }
+
+
+
+/* modal copy */
+
+.modal-copy-container.copying .modal {
+    display: block;
+}
+
+.modal-copy-container.copying {
+    opacity: 0;
+}
+
+.modal-copy-container.show {
+    display: block;
+    position: fixed;
+    left: 25%;
+    width: 50%;
+    top: calc(50% - 200px);
+    z-index: 999999;
+}
+
+.modal-copy-container.show .modal.modal-copy {
+    left: 25%;
+    width: 50%;
+    top: calc(50% - 200px);
+    display: block;
+    position: fixed;
+    background: white;
+    height: 300px;
+    padding: 60px;
+    border: 1px solid black;
+    z-index: 10000;
+}
+
+.modal-copy-container.show:before {
+    display: block;
+    content: " ";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    opacity: 0.7;
+}
