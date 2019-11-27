@@ -147,7 +147,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
         socialShareMenu.innerHTML = menu; // INSERT THE DROPDOWN MENU
         setSocialShareModal(socialShareWidget); // SETS THE MORE BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WITH OTHER NETWORKS)
-        setPrint(socialShareWidget, ".lorem"); // SETS THE PRINT BUTTON/OPTION (printSrc should be a jquery valid selector,
+        setPrint(socialShareWidget, printSrc); // SETS THE PRINT BUTTON/OPTION (printSrc should be a jquery valid selector,
                                               // it will print the selector content or whole page,
                                              // you can also set a CSS file inside the function, see it)
         setCopy(socialShareWidget); // SETS THE COPY BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WHEN CLIPBOARD ACCESS IS NOT ALLOWED)
