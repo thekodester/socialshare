@@ -44,7 +44,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       },
       print: {
         name: "Print",
-        url: "#socialSharePrint" // NETWORKS WITH A HASHTAG RUN A JAVASCRIPT CLICK EVENT
+        url: "#socialSharePrint"
       },
       // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
       add: {
@@ -145,12 +145,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
         socialShareMenu.innerHTML = menu; // INSERT THE DROPDOWN MENU
         setSocialShareModal(socialShareWidget); // SETS THE MORE BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WITH OTHER NETWORKS)
-        setPrint(socialShareWidget, printSrc); // SETS THE PRINT BUTTON/OPTION (printSrc should be a jquery valid selector,
-        // it will print the selector content or whole page,
-        // you can also set a CSS file inside the function, see it)
+        setPrint(socialShareWidget, printSrc); // SETS THE PRINT BUTTON/OPTION (PRINTS WHOLE PAGE OR SELECTORS CONTENT)
         setCopy(socialShareWidget); // SETS THE COPY BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WHEN CLIPBOARD ACCESS IS NOT ALLOWED)
 
-        // SET BUTTON AS VERTICAL FOR LARGE DEVICES
+        // SET BUTTON AS VERTICAL FOR LARGE DEVICES (ONLY IF USING ONE BUTTON NEED ID OF 'socialShareBtnText')
         const largeDevice = window.matchMedia("(min-width: 992px)")
         largeDevice.addListener( verticalBtn );
         verticalBtn( largeDevice );
@@ -293,42 +291,37 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           var printDiv = true;
           popup.document.write('<html><head></head><body class="sharecontent print">');
           var printHTML = $(printSrc)[0].innerHTML;
-
         } else {
           var printDiv = false;
-          var printHTML = $("html")[0].innerHTML
+          var printHTML = $("html")[0].innerHTML;
         }
-
         popup.document.write(printHTML);
 
-
-        /* I like to hide the share button on the print, I think that may be a lot of things unnecessary on printed page, */
-        /* you may set it bellow or on a separated stylesheet */
+        // Hides the share button on the print
         var elementClasses = "." + element.className.split(" ").join(".");
         popup.document.head.insertAdjacentHTML('beforeend', '<style>' + elementClasses + ' .btn-group, ' + elementClasses + ' .dropdown-menu { display: none} </style>');
 
+        // Sets bootstrap css for the print
         let bootstrapStylesheet = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
         popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="' + bootstrapStylesheet + '" type="text/css">');
 
-        /* You can set a stylesheet for the print popup, just uncomment bellow and set the path to the css file */
+        // You can set a stylesheet for the print popup, just uncomment bellow and set the path to the css file
+        // This is useful to hide unnecessary content when printing
         // let stylelist = window.location.protocol+"//"+window.location.host+"/style.css";
         // popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="'+stylelist+'" type="text/css">');
-
 
         if (printDiv) {
           popup.document.write('</body></html>');
         }
 
         setTimeout(function() {
-          /* just to be sure that file was loaded */
+          // Precaution inorder to be sure that file was loaded
           popup.window.print();
           popup.window.close();
         }, 500);
-
       });
     }
   }
-
 
   /**
    * @description setCopy creates a mini form that allows the user to copy the pages link (must be used inside the modal).
@@ -338,7 +331,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       element.querySelector('[href="#socialShareCopy"]').addEventListener('click', function(e) {
         e.preventDefault();
 
-        /* show box only if cannot copy automatically */
+        // Show modal only if cannot copy automatically
         modalCopy = document.createElement('div');
         copyForm = "<div id='modal-copy-container' class='modal-copy-container'>";
         copyForm += "<div class='modal modal-copy'>";
@@ -380,7 +373,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 
   /**
-   * @description copyText used by setCopy selects the text in an element and copies it, informs the user with a popover.
+   * @description copyText used by setCopy selects the text in an element and copies it
    */
   function copyText(element) {
     try {
