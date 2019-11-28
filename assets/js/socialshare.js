@@ -162,10 +162,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
    * @description verticalBtn used by the initial function to covert the button text to vertical.
    */
   function verticalBtn( largeDevice ) {
-    if ( largeDevice.matches ) {
-      document.getElementById( 'socialShareBtnText' ).innerHTML = "S\r\nh\r\na\r\nr\r\ne\r\n\u27A5";
-    } else {
+    let socialShareBtnText = document.getElementById( 'socialShareBtnText' );
+    if (socialShareBtnText != null) {
       document.getElementById( 'socialShareBtnText' ).innerHTML = "\u27A5 Share";
+      if ( largeDevice.matches ) {
+        document.getElementById( 'socialShareBtnText' ).innerHTML = "S\r\nh\r\na\r\nr\r\ne\r\n\u27A5";
+      }
     }
   }
 
