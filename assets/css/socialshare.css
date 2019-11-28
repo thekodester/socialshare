@@ -36,14 +36,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .social-share-sticky .dropdown-menu-multi {
   margin-left: 0.5rem !important;
-  top: -222% !important;
+  top: -275% !important;
   width: 15em;
+  padding: 1em .5em;
 }
 
 .social-share-sticky .dropdown-row > a.dropdown-item {
   display: inline-block;
   padding: 0.25em;
-  width: 20%;
+  margin: 5px auto;
+  width: 25%;
   color: #fff;
   font-size: 0;
 }
