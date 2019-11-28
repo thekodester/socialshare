@@ -2,7 +2,10 @@
 PLEASE SEE ICONS/FREEBIE-LICENSE.txt AS THE ICONS ARE FROM http://www.dreamstale.com AND ARE SUBJECT TO A DIFFERENT LICENSE
 
 Copyright 2019 github.com/thekodester and thekodester.ca
-Customised by github.com/tuxrafa
+
+CONTRIBUTIONS:
+NOVEMBER 2019: github.com/tuxrafa
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -25,10 +28,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         name: "Email",
         url: "mailto:?to=&subject={title}&body={url}%0A{description}"
       },
-      print: {
-        name: "Print",
-        url: "#socialSharePrint" // NETWORKS WITH A HASHTAG RUN A JAVASCRIPT CLICK EVENT
-      },
       link: {
         tinyurl: {
           name: "TinyURL",
@@ -39,10 +38,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           url: "#socialShareCopy",
         }
       },
-      // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
       add: {
         name: "More",
         url: "#socialShareMore"
+      },
+      // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
+      print: {
+        name: "Print",
+        url: "#socialSharePrint" // NETWORKS WITH A HASHTAG RUN A JAVASCRIPT CLICK EVENT
       },
       twitter: {
         name: "Twitter",
@@ -56,10 +59,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       blogger: {
         name: "Blogger",
         url: "http://www.blogger.com/blog_this.pyra?t=&amp;u={url}&amp;n={title}"
-      },
-      digg: {
-        name: "Digg",
-        url: "http://digg.com/submit?phase=2&amp;url={url}&amp;title={title}"
       },
       diigo: {
         name: "Diigo",
@@ -181,7 +180,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
       // CHECK IF LIMIT REACHED (LIMITS WHAT IS INITIALLY SEE ABLE AND HIDES OTHERS FOR MODAL)
       if (total === limit) {
-        menu += "<div class='dropdown-row'><div class='title-social-media'>Share!</div>" + items + "</div>";
+        menu += "<div class='dropdown-row'><div class='sr-only'>Share!</div>" + items + "</div>";
         items = "";
       } else if (total === totalNetworks) {
         menu += "<div class='dropdown-row d-none' id='dropdownRowHidden'>" + items + "</div>";
