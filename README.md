@@ -53,12 +53,11 @@ Currently we have only tested with **BootStrap v4.3.1**, but you are free to try
 
 ### Customization
 
-
 You can customize the plugin using the `data-social-share` attribute.
 
 |    Name     |  Type  |    Default     | Description |
 |-------------|--------|----------------|-------------|
-|  printSrc   | String |  main_content  | If used well print the contents of the provide id string. When not used well default to looking for an element with id of *main_content* and print its content. |
+|  printSrc   | String |  html  | Defaults to printing the entire html page, but you can set any id or class to print. |
 |   iconSrc   | String |  css rendered  | If used the icons well be loaded using the `<img>` tag. When not used well default to using css and load the icons as a background image. |
 |    title    | String | document.title | Title is used differently by each social network, but provides content to what is being shared (is most commonly used). |
 |    image    | String |     empty      | Image is used differently by each social network, but provides content to what is being shared (is rarely used). |
@@ -66,8 +65,47 @@ You can customize the plugin using the `data-social-share` attribute.
 
 Example:
 ```html
-data-social-share="{'iconSrc': '/path/to/icons/', title': 'Page Title', image: '/path/to/image.jpg', 'description': 'Page Description'}"
+data-social-share="{'printSrc': '#main_content', 'iconSrc': '/path/to/icons/', title': 'Page Title', image: '/path/to/image.jpg', 'description': 'Page Description'}"
 ```
+
+Customizing the printSrc results can easily be done by editing the following lines (inside the JS file):
+```html
+// You can set a stylesheet for the print popup, just uncomment bellow and set the path to the css file
+// This is useful to hide unnecessary content when printing
+// let stylelist = window.location.protocol+"//"+window.location.host+"/style.css";
+// popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="'+stylelist+'" type="text/css">');
+```
+
+Multiple share buttons can now be used. Make sure to set 'data-share-url'.
+
+Example:
+```html
+<!--SocialShare1-->
+<div class="social-share social-share-sticky" data-share-url="https://twitter.com" data-social-share="{'iconSrc': '/static/js/socialshare/icons/', 'title': 'Twitter', 'description': 'Twitter'}">
+  <div class="btn-group dropright">
+    <button class="btn btn-outline-danger dropdown-toggle text-uppercase" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span id="socialShareBtnText1" aria-hidden="true">Share</span>
+      <span class="sr-only">Share this page</span>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right dropdown-menu-multi"></div>
+  </div>
+</div>
+<!--SocialShare2-->
+<div class="social-share social-share-sticky social-secondary-btn" data-share-url="https://github.com/" data-social-share="{'iconSrc': '/static/js/socialshare/icons/', 'title': 'GitHub', 'description': 'GitHub'}">
+  <div class="btn-group dropright">
+    <button class="btn btn-outline-danger dropdown-toggle text-uppercase" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span id="socialShareBtnText2" aria-hidden="true">Share</span>
+      <span class="sr-only">Share this page</span>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right dropdown-menu-multi"></div>
+  </div>
+</div>
+```
+
+## Contributions
+
+A list of when, what, and who contributed to the project:
+* November 2019 - Additional Links and Customizations: @tuxrafa
 
 ## Contributing
 
