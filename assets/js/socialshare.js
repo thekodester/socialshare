@@ -248,7 +248,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             div = document.createElement('div');
 
           modal += "<div class='modal-content'><div class='modal-body text-center'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
-          modal += "<h1>Compartilhar</h1><div class='mt-2'>" + dropdownRowHidden.innerHTML;
+          modal += "<h1 class='sr-only'>Additional Share Options</h1><div class='mt-2'>" + dropdownRowHidden.innerHTML;
           modal += "</div></div></div></div></div>";
 
           div.id = "ssmodal";
