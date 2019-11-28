@@ -369,14 +369,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       element.focus();
       element.select();
       document.execCommand('copy');
-      $(element).popover({
-        content: 'Copied!',
-        placement: 'top'
-      });
-      $(element).popover('show');
-      setTimeout(function() {
-        $(element).popover('hide');
-      }, 1500);
       return true;
     } catch (ex) {
       console.log(ex);
