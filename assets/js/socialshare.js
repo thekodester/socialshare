@@ -149,9 +149,25 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         // it will print the selector content or whole page,
         // you can also set a CSS file inside the function, see it)
         setCopy(socialShareWidget); // SETS THE COPY BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WHEN CLIPBOARD ACCESS IS NOT ALLOWED)
+
+        // SET BUTTON AS VERTICAL FOR LARGE DEVICES
+        const largeDevice = window.matchMedia("(min-width: 992px)")
+        largeDevice.addListener( verticalBtn );
+        verticalBtn( largeDevice );
       }
     }
   })();
+
+  /**
+   * @description verticalBtn used by the initial function to covert the button text to vertical.
+   */
+  function verticalBtn( largeDevice ) {
+    if ( largeDevice.matches ) {
+      document.getElementById( 'socialShareBtnText' ).innerHTML = "S\r\nh\r\na\r\nr\r\ne\r\n\u27A5";
+    } else {
+      document.getElementById( 'socialShareBtnText' ).innerHTML = "\u27A5 Share";
+    }
+  }
 
   /**
    * @description createMenu is used to generate the html dropdown menu.
