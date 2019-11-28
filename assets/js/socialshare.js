@@ -13,9 +13,13 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-(function () {
+(function() {
   var urlFinal;
   var socialNetworks = {
+      twitter: {
+        name: "Twitter",
+        url: "http://twitter.com/home?status={title}%20{url}"
+      },
       facebook: {
         name: "Facebook",
         url: "http://www.facebook.com/sharer.php?u={url}&amp;t={title}"
@@ -38,20 +42,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           url: "#socialShareCopy",
         }
       },
-      add: {
-        name: "More",
-        url: "#socialShareMore"
-      },
-      // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
       print: {
         name: "Print",
         url: "#socialSharePrint" // NETWORKS WITH A HASHTAG RUN A JAVASCRIPT CLICK EVENT
       },
-      twitter: {
-        name: "Twitter",
-        url: "http://twitter.com/home?status={title}%20{url}"
+      // ONLY THE ABOVE ICONS AND ONE BELOW ARE VISIBLE BY DEFAULT (THE MORE BUTTON LOADS A MODAL WITH THE OTHERS)
+      add: {
+        name: "More",
+        url: "#socialShareMore"
       },
-
       bitly: {
         name: "Bitly",
         url: "https://bitly.com/"
@@ -147,8 +146,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         socialShareMenu.innerHTML = menu; // INSERT THE DROPDOWN MENU
         setSocialShareModal(socialShareWidget); // SETS THE MORE BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WITH OTHER NETWORKS)
         setPrint(socialShareWidget, printSrc); // SETS THE PRINT BUTTON/OPTION (printSrc should be a jquery valid selector,
-                                              // it will print the selector content or whole page,
-                                             // you can also set a CSS file inside the function, see it)
+        // it will print the selector content or whole page,
+        // you can also set a CSS file inside the function, see it)
         setCopy(socialShareWidget); // SETS THE COPY BUTTON/OPTION (ALLOWS A MODAL TO DISPLAY WHEN CLIPBOARD ACCESS IS NOT ALLOWED)
       }
     }
@@ -158,7 +157,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
    * @description createMenu is used to generate the html dropdown menu.
    */
   function createMenu(iconSrc, title, image, description, urlShare) {
-    let limit = 5,
+    let limit = 7,
       total = 1,
       items = "",
       menu = "";
@@ -273,9 +272,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         var popup = open("", "Popup", "width=1025,height=900");
 
         if (printSrc != "html") {
-            var printDiv = true;
-            popup.document.write('<html><head></head><body class="sharecontent print">');
-            var printHTML = $(printSrc)[0].innerHTML;
+          var printDiv = true;
+          popup.document.write('<html><head></head><body class="sharecontent print">');
+          var printHTML = $(printSrc)[0].innerHTML;
 
         } else {
           var printDiv = false;
@@ -285,15 +284,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         popup.document.write(printHTML);
 
 
-    /* I like to hide the share button on the print, I think that may be a lot of things unnecessary on printed page, */
-    /* you may set it bellow or on a separated stylesheet */
+        /* I like to hide the share button on the print, I think that may be a lot of things unnecessary on printed page, */
+        /* you may set it bellow or on a separated stylesheet */
         var elementClasses = "." + element.className.split(" ").join(".");
         popup.document.head.insertAdjacentHTML('beforeend', '<style>' + elementClasses + ' .btn-group, ' + elementClasses + ' .dropdown-menu { display: none} </style>');
 
         let bootstrapStylesheet = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-        popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="'+bootstrapStylesheet+'" type="text/css">');
+        popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="' + bootstrapStylesheet + '" type="text/css">');
 
-    /* You can set a stylesheet for the print popup, just uncomment bellow and set the path to the css file */
+        /* You can set a stylesheet for the print popup, just uncomment bellow and set the path to the css file */
         // let stylelist = window.location.protocol+"//"+window.location.host+"/style.css";
         // popup.document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="'+stylelist+'" type="text/css">');
 
@@ -302,10 +301,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           popup.document.write('</body></html>');
         }
 
-        setTimeout(function() { /* just to be sure that file was loaded */
-      		popup.window.print();
-      		popup.window.close();
-      	}, 500);
+        setTimeout(function() {
+          /* just to be sure that file was loaded */
+          popup.window.print();
+          popup.window.close();
+        }, 500);
 
       });
     }
