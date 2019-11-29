@@ -30,7 +30,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       },
       email: {
         name: "Email",
-        url: "mailto:?to=&subject={title}&body={url}%0A{description}"
+        url: "mailto:?to=&amp;subject={title}&body={url}%0A{description}"
       },
       link: {
         tinyurl: {
@@ -51,21 +51,21 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         name: "More",
         url: "#socialShareMore"
       },
-      bitly: {
-        name: "Bitly",
-        url: "https://bitly.com/"
-      },
       blogger: {
         name: "Blogger",
         url: "http://www.blogger.com/blog_this.pyra?t=&amp;u={url}&amp;n={title}"
       },
       diigo: {
         name: "Diigo",
-        url: "http://www.diigo.com/post?url={url}&amp;title={title}"
+        url: "http://www.diigo.com/post?url={url}&amp;title={title}&amp;desc={desc}"
       },
       evernote: {
         name: "Evernote",
-        url: "https://www.evernote.com/clip.action?url={url}&title={title}"
+        url: "https://www.evernote.com/clip.action?url={url}&amp;title={title}"
+      },
+      flipboard: {
+        name: "FlipBoard",
+        url: "https://share.flipboard.com/bookmarklet/popout?title={title}&url={url}"
       },
       // YOU CAN GROUP ICONS FROM THE SAME BRAND SO THEY SHARE AN ICON
       google: {
@@ -102,6 +102,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         name: "Reddit",
         url: "http://reddit.com/submit?url={url}&amp;title={title}"
       },
+      skype: {
+        name: "Skype",
+        url: "https://web.skype.com/share?url={url}&text={title}"
+      },
+      telegram: {
+        name: "Telegram",
+        url: "https://t.me/share/url?url={url}&text={title}&to="
+      },
       tumblr: {
         name: "Tumblr",
         url: "http://www.tumblr.com/share/link?url={url}&amp;name={title}&amp;description={description}"
@@ -113,8 +121,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       qrcode: {
         name: "GoQR.me",
         url: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data={url}"
+      },
+      wordpress: {
+        name: "Wordpress",
+        url: "https://wordpress.com/wp-admin/press-this.php?u={url}&s={description}"
       }
-
     },
     totalNetworks = Object.keys(socialNetworks).length;
 
@@ -264,8 +275,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             div = document.createElement('div');
 
           modal += "<div class='modal-content'><div class='modal-body text-center'><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>";
-          modal += "<h1 class='sr-only'>Additional Share Options</h1><div class='mt-4'>" + dropdownRowHidden.innerHTML;
-          modal += "</div></div></div></div></div>";
+          modal += "<h1 class='sr-only'>Additional Share Options</h1><div class='mt-4'>" + dropdownRowHidden.innerHTML + "</div>";
+          modal += "<a class='small text-muted' href='https://thekodester.github.io/socialshare/' target='_blank' rel='noopener'>created with SocialShare</a>";
+          modal += "<p class='small text-muted m-0'>Referenced platforms are not affiliated or endorsement.</p>";
+          modal += "<p class='small text-muted m-0'>Also all images and logos are owned by the respective third parties.</p>";
+          modal += "</div></div></div></div>";
 
           div.id = "ssmodal";
           div.innerHTML = modal;
