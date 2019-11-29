@@ -325,6 +325,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   content: "";
 }
 
+.icn-dreamstale-flickr::before {
+  background-image: url('flickr.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
 .icn-dreamstale-formspring::before {
   background-image: url('formspring.svg');
   background-repeat: no-repeat;
@@ -747,6 +757,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .icn-dreamstale-tumblr::before {
   background-image: url('tumblr.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  content: "";
+}
+
+.icn-dreamstale-telegram::before {
+  background-image: url('telegram.svg');
   background-repeat: no-repeat;
   background-size: 48px 48px;
   display: inline-block;
